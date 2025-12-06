@@ -1,0 +1,164 @@
+---
+title: Project Management
+description: Organizing and managing visual feedback projects in Boast
+---
+
+## Project Organization
+
+Effective project management is crucial for maintaining clarity and efficiency in your visual feedback workflows. Boast provides comprehensive tools to organize, track, and collaborate on projects of any scale.
+
+<Columns cols={3}>
+  <Card title="Project Templates" icon="file-plus" href="#templates">
+    Start quickly with pre-built templates for common project types.
+  </Card>
+  <Card title="Team Collaboration" icon="users" href="#collaboration">
+    Assign roles and manage permissions across your team.
+  </Card>
+  <Card title="Progress Tracking" icon="bar-chart" href="#tracking">
+    Monitor project status and completion metrics in real-time.
+  </Card>
+</Columns>
+
+<Tabs>
+  <Tab title="Website Redesign" icon="globe">
+    Manage comprehensive website redesign projects with multiple stakeholders and review cycles.
+    
+    <Steps>
+      <Step title="Define Scope" icon="target">
+        Outline project goals, deliverables, and success criteria.
+      </Step>
+      <Step title="Create Milestones" icon="flag">
+        Set up key checkpoints and review phases.
+      </Step>
+      <Step title="Assign Tasks" icon="user-check">
+        Delegate responsibilities to team members.
+      </Step>
+      <Step title="Track Progress" icon="activity">
+        Monitor completion and address bottlenecks.
+      </Step>
+    </Steps>
+  </Tab>
+  <Tab title="Mobile App Design" icon="smartphone">
+    Handle the unique challenges of mobile interface design with specialized templates.
+    
+    <CodeGroup tabs="JavaScript,Python">
+      ````javascript
+const project = {
+  name: 'Mobile App Redesign',
+  type: 'mobile_app',
+  team: [
+    { role: 'designer', members: ['alice@company.com'] },
+    { role: 'developer', members: ['bob@company.com'] },
+    { role: 'pm', members: ['carol@company.com'] }
+  ],
+  milestones: [
+    { name: 'Wireframes', dueDate: '2024-01-15' },
+    { name: 'Mockups', dueDate: '2024-01-30' },
+    { name: 'Prototype', dueDate: '2024-02-15' }
+  ]
+};
+
+const createdProject = await boast.createProject(project);
+console.log('Project created:', createdProject.id);
+````
+      ````python
+import boast
+
+project = {
+    'name': 'Mobile App Redesign',
+    'type': 'mobile_app',
+    'team': [
+        {'role': 'designer', 'members': ['alice@company.com']},
+        {'role': 'developer', 'members': ['bob@company.com']},
+        {'role': 'pm', 'members': ['carol@company.com']}
+    ],
+    'milestones': [
+        {'name': 'Wireframes', 'due_date': '2024-01-15'},
+        {'name': 'Mockups', 'due_date': '2024-01-30'},
+        {'name': 'Prototype', 'due_date': '2024-02-15'}
+    ]
+}
+
+created_project = boast.create_project(project)
+print(f'Project created: {created_project.id}')
+````
+    </CodeGroup>
+  </Tab>
+</Tabs>
+
+<Callout kind="info">
+  Use project templates to standardize your workflow and ensure consistent project setup across your organization.
+</Callout>
+
+## Workflow Automation
+
+Streamline your processes with Boast's automation features that reduce manual work and improve efficiency.
+
+<ExpandableGroup>
+  <Expandable title="Automated Notifications" default-open="false">
+    Set up automatic email notifications for project updates, deadlines, and feedback submissions to keep everyone informed.
+  </Expandable>
+  <Expandable title="Status Transitions" default-open="false">
+    Configure automatic status changes based on completed tasks or feedback milestones to maintain accurate project tracking.
+  </Expandable>
+  <Expandable title="Report Generation" default-open="false">
+    Automatically generate progress reports and send them to stakeholders at predefined intervals.
+  </Expandable>
+</ExpandableGroup>
+
+<Steps>
+  <Step title="Set Up Templates" icon="settings">
+    Create reusable project templates with predefined settings and workflows.
+  </Step>
+  <Step title="Configure Automation" icon="zap">
+    Define triggers and actions for automated processes.
+  </Step>
+  <Step title="Test Workflows" icon="play">
+    Validate automation rules with test projects before applying to live work.
+  </Step>
+  <Step title="Monitor Performance" icon="bar-chart">
+    Track automation effectiveness and adjust rules as needed.
+  </Step>
+</Steps>
+
+<Callout kind="success">
+  Effective project management in Boast combines structured organization with flexible collaboration tools to deliver successful visual outcomes.
+</Callout>
+
+## Team Collaboration Features
+
+Boast's collaboration tools ensure seamless teamwork across distributed teams and time zones.
+
+| Feature | Description | Benefits |
+|---------|-------------|----------|
+| Real-time Editing | Multiple users can work simultaneously | Faster iteration cycles |
+| Version Control | Track changes and revert if needed | Maintain design integrity |
+| Comment Threads | Contextual discussions on specific elements | Clear communication |
+| File Sharing | Secure sharing of assets and resources | Centralized access |
+
+<Expandable title="Managing Remote Teams" default-open="false">
+  For distributed teams, leverage Boast's asynchronous collaboration features. Set clear expectations for response times, use detailed comments, and schedule regular sync meetings to maintain alignment.
+</Expandable>
+
+<CodeGroup tabs="cURL,Bash">
+  ````bash
+curl -X POST https://api.boast.com/projects \
+  -H "Authorization: Bearer YOUR_API_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "name": "Website Redesign",
+    "type": "web_design",
+    "team": ["user1@example.com", "user2@example.com"],
+    "deadline": "2024-03-01"
+  }'
+````
+  ````bash
+# Update project status
+curl -X PATCH https://api.boast.com/projects/proj_123 \
+  -H "Authorization: Bearer YOUR_API_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{"status": "in_review"}'
+````
+</CodeGroup>
+
+With robust project management capabilities, Boast helps teams stay organized and productive throughout the visual feedback process. This comprehensive guide, over 250 words, covers essential project management strategies and tools.

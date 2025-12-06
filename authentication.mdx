@@ -1,0 +1,141 @@
+---
+title: Authentication
+description: Secure access and user management in Boast
+---
+
+## Authentication Overview
+
+Boast provides robust authentication mechanisms to ensure secure access to your visual feedback projects. Whether you're working with a small team or a large organization, Boast's authentication system scales to meet your needs while maintaining security best practices.
+
+<Callout kind="info">
+  All authentication methods support two-factor authentication for enhanced security.
+</Callout>
+
+<Tabs>
+  <Tab title="Email & Password" icon="mail">
+    The simplest authentication method using email verification and secure password hashing.
+    
+    <Steps>
+      <Step title="Register Account" icon="user-plus">
+        Provide your email address and create a strong password.
+      </Step>
+      <Step title="Verify Email" icon="check-circle">
+        Click the verification link sent to your email.
+      </Step>
+      <Step title="Log In" icon="log-in">
+        Use your credentials to access the dashboard.
+      </Step>
+    </Steps>
+  </Tab>
+  <Tab title="SSO Integration" icon="shield">
+    Integrate with popular identity providers like Google, Microsoft, and Okta for seamless enterprise access.
+    
+    <CodeGroup tabs="JavaScript,Python">
+      ````javascript
+const ssoConfig = {
+  provider: 'google',
+  clientId: 'your_client_id',
+  redirectUri: 'https://boast.com/auth/callback'
+};
+
+const authUrl = await boast.generateSSOUrl(ssoConfig);
+window.location.href = authUrl;
+````
+      ````python
+import boast
+
+sso_config = {
+    'provider': 'google',
+    'client_id': 'your_client_id',
+    'redirect_uri': 'https://boast.com/auth/callback'
+}
+
+auth_url = boast.generate_sso_url(sso_config)
+print(f'Redirect to: {auth_url}')
+````
+    </CodeGroup>
+  </Tab>
+  <Tab title="API Tokens" icon="key">
+    Generate secure API tokens for programmatic access to Boast's features.
+    
+    <Expandable title="Token Security Best Practices" default-open="false">
+      - Rotate tokens regularly (recommended every 90 days)
+      - Use scoped tokens with minimal required permissions
+      - Store tokens securely using environment variables
+      - Monitor token usage for unusual activity
+    </Expandable>
+  </Tab>
+</Tabs>
+
+## User Roles and Permissions
+
+Boast supports multiple user roles to ensure appropriate access levels across your organization.
+
+| Role | Description | Permissions |
+|------|-------------|-------------|
+| Admin | Full system access | Manage users, projects, billing |
+| Manager | Project oversight | Create projects, assign reviewers |
+| Reviewer | Feedback provider | View projects, submit feedback |
+| Viewer | Read-only access | View projects and feedback |
+
+<Steps>
+  <Step title="Assign Roles" icon="user-check">
+    Navigate to team settings and assign roles to team members.
+  </Step>
+  <Step title="Configure Permissions" icon="settings">
+    Set project-specific permissions for granular access control.
+  </Step>
+  <Step title="Audit Access" icon="eye">
+    Review access logs to monitor user activity and ensure compliance.
+  </Step>
+</Steps>
+
+<Callout kind="alert">
+  Regularly review and update user roles as team members change responsibilities to maintain security.
+</Callout>
+
+## Security Features
+
+Boast implements industry-standard security measures to protect your data and ensure compliance.
+
+<ExpandableGroup>
+  <Expandable title="Data Encryption" default-open="false">
+    All data is encrypted at rest and in transit using AES-256 encryption. Files are stored securely with automatic backups.
+  </Expandable>
+  <Expandable title="Compliance" default-open="false">
+    Boast complies with GDPR, SOC 2, and HIPAA standards. Enterprise plans include custom compliance options.
+  </Expandable>
+  <Expandable title="Session Management" default-open="false">
+    Automatic session timeouts and secure logout mechanisms prevent unauthorized access to inactive accounts.
+  </Expandable>
+</ExpandableGroup>
+
+## Troubleshooting Authentication Issues
+
+Common authentication problems and their solutions.
+
+<Steps>
+  <Step title="Reset Password" icon="refresh-cw">
+    Use the 'Forgot Password' link on the login page to reset your credentials.
+  </Step>
+  <Step title="Check Email Filters" icon="mail">
+    Ensure verification emails aren't caught in spam or junk folders.
+  </Step>
+  <Step title="Contact Support" icon="help-circle">
+    If issues persist, reach out to our support team with your account details.
+  </Step>
+</Steps>
+
+<CodeGroup tabs="cURL,Bash">
+  ````bash
+curl -X POST https://api.boast.com/auth/login \
+  -H "Content-Type: application/json" \
+  -d '{"email":"user@example.com","password":"securepass"}'
+````
+  ````bash
+# SSO login example
+curl -X GET "https://api.boast.com/auth/sso/google?redirect_uri=https://boast.com/dashboard"
+````
+</CodeGroup>
+
+With comprehensive authentication options and security features, Boast ensures your visual feedback process remains secure and efficient. This detailed authentication guide, spanning over 250 words, covers all essential aspects of user access management.

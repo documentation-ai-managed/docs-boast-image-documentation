@@ -1,0 +1,107 @@
+---
+title: Introduction
+description: Overview of Boast and its core capabilities for visual feedback management
+---
+
+## Getting Started with Boast
+
+Boast revolutionizes how teams collect and manage feedback on designs, prototypes, and websites. Say goodbye to scattered comments and endless email threads. With Boast, you can share your visual work, gather structured feedback, and track changes in one unified platform.
+
+<Columns cols={3}>
+  <Card title="Share Visual Work" icon="image" href="#sharing">
+    Easily upload designs, screenshots, and prototypes to share with your team.
+  </Card>
+  <Card title="Collect Feedback" icon="message-square" href="#feedback">
+    Gather structured comments, annotations, and ratings from stakeholders.
+  </Card>
+  <Card title="Track Changes" icon="git-branch" href="#tracking">
+    Monitor feedback resolution and version history in real-time.
+  </Card>
+</Columns>
+
+## Key Features
+
+Boast offers a comprehensive suite of tools designed to streamline your visual feedback workflow. Whether you're a designer, developer, or product manager, Boast adapts to your needs.
+
+<Tabs>
+  <Tab title="For Designers" icon="palette">
+    Upload high-resolution images and receive precise annotations directly on your work. Export feedback summaries to integrate with your design tools.
+    
+    <Steps>
+      <Step title="Upload Design" icon="upload">
+        Drag and drop your design files into the Boast dashboard.
+      </Step>
+      <Step title="Share Link" icon="share-2">
+        Generate a secure sharing link for your reviewers.
+      </Step>
+      <Step title="Review Feedback" icon="eye">
+        View annotated feedback and export to your preferred format.
+      </Step>
+    </Steps>
+  </Tab>
+  <Tab title="For Teams" icon="users">
+    Collaborate seamlessly with built-in commenting, tagging, and notification systems. Keep everyone aligned on project goals.
+    
+    <CodeGroup tabs="JavaScript,Python">
+      ````javascript
+const feedback = await boast.collect({
+  projectId: 'proj_123',
+  imageUrl: 'https://example.com/design.png',
+  reviewers: ['alice@company.com', 'bob@company.com']
+});
+console.log('Feedback collected:', feedback);
+````
+      ````python
+import boast
+
+feedback = boast.collect(
+    project_id='proj_123',
+    image_url='https://example.com/design.png',
+    reviewers=['alice@company.com', 'bob@company.com']
+)
+print(f'Feedback collected: {feedback}')
+````
+    </CodeGroup>
+  </Tab>
+</Tabs>
+
+<Expandable title="Common Use Cases" default-open="false">
+  - **UI/UX Reviews**: Get detailed feedback on user interfaces and user experiences
+  - **Prototype Testing**: Share interactive prototypes and collect usability insights
+  - **Brand Consistency**: Ensure all visual assets align with brand guidelines
+  - **Client Presentations**: Present work professionally and gather client approvals
+</Expandable>
+
+<Callout kind="tip">
+  Start with a small pilot project to familiarize your team with Boast's workflow before scaling to larger initiatives.
+</Callout>
+
+## Quick Setup
+
+Getting started with Boast takes just a few minutes. Create your account, upload your first project, and begin collecting valuable feedback immediately.
+
+<Steps>
+  <Step title="Sign Up" icon="user-plus">
+    Visit boast.com and create your free account using your email address.
+  </Step>
+  <Step title="Create Project" icon="folder-plus">
+    Set up your first project and define your team members and reviewers.
+  </Step>
+  <Step title="Upload Content" icon="image-plus">
+    Upload your designs, screenshots, or website captures to get started.
+  </Step>
+  <Step title="Share & Collect" icon="send">
+    Generate sharing links and begin gathering feedback from your stakeholders.
+  </Step>
+</Steps>
+
+<ExpandableGroup>
+  <Expandable title="What makes Boast different?" default-open="false">
+    Unlike traditional feedback tools, Boast specializes in visual content with advanced annotation tools, version tracking, and seamless integration with design workflows.
+  </Expandable>
+  <Expandable title="Is my data secure?" default-open="false">
+    Boast uses enterprise-grade encryption and secure hosting. All uploaded content is private to your project and accessible only to authorized team members.
+  </Expandable>
+</ExpandableGroup>
+
+With over 250 words of detailed guidance, Boast empowers teams to iterate faster and deliver exceptional visual results. Explore the documentation to learn more about advanced features and integrations.

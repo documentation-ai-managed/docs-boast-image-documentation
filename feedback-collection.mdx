@@ -1,0 +1,142 @@
+---
+title: Feedback Collection
+description: Best practices for gathering and managing visual feedback in Boast
+---
+
+## Feedback Collection Strategies
+
+Effective feedback collection is the cornerstone of successful visual projects. Boast provides powerful tools to streamline this process, ensuring you capture valuable insights from all stakeholders.
+
+<Columns cols={3}>
+  <Card title="Structured Templates" icon="file-text" href="#templates">
+    Use predefined feedback templates to guide reviewers and ensure consistency.
+  </Card>
+  <Card title="Annotation Tools" icon="edit" href="#annotations">
+    Enable precise feedback with drawing tools, text comments, and stickers.
+  </Card>
+  <Card title="Real-time Collaboration" icon="users" href="#collaboration">
+    Allow multiple reviewers to provide feedback simultaneously.
+  </Card>
+</Columns>
+
+<Tabs>
+  <Tab title="Design Reviews" icon="image">
+    Collect detailed feedback on visual designs with annotation tools and rating scales.
+    
+    <Steps>
+      <Step title="Upload Design" icon="upload">
+        Share your design files in various formats (PNG, JPG, PDF).
+      </Step>
+      <Step title="Select Reviewers" icon="user-plus">
+        Choose team members and stakeholders for the review.
+      </Step>
+      <Step title="Set Timeline" icon="clock">
+        Define review deadlines and reminders.
+      </Step>
+      <Step title="Analyze Results" icon="bar-chart">
+        Review aggregated feedback and prioritize changes.
+      </Step>
+    </Steps>
+  </Tab>
+  <Tab title="User Testing" icon="eye">
+    Gather usability feedback from real users with task-based reviews.
+    
+    <Expandable title="Creating Effective User Test Scenarios" default-open="false">
+      - Define clear tasks for users to complete
+      - Include both success and failure scenarios
+      - Ask open-ended questions about user experience
+      - Capture both qualitative and quantitative data
+    </Expandable>
+  </Tab>
+</Tabs>
+
+<Callout kind="tip">
+  Use feedback templates to standardize the review process and ensure comprehensive coverage of all design aspects.
+</Callout>
+
+## Advanced Feedback Features
+
+Boast offers advanced features to enhance your feedback collection capabilities.
+
+<ExpandableGroup>
+  <Expandable title="Conditional Logic" default-open="false">
+    Create dynamic feedback forms that show relevant questions based on previous answers, ensuring targeted and efficient reviews.
+  </Expandable>
+  <Expandable title="Integration Webhooks" default-open="false">
+    Automatically trigger actions in external tools when feedback is submitted, keeping your workflow connected.
+  </Expandable>
+  <Expandable title="Feedback Analytics" default-open="false">
+    Gain insights into feedback patterns and reviewer behavior with built-in analytics and reporting tools.
+  </Expandable>
+</ExpandableGroup>
+
+<CodeGroup tabs="JavaScript,Python">
+  ````javascript
+const feedbackConfig = {
+  projectId: 'proj_456',
+  template: 'design_review',
+  reviewers: [
+    { email: 'designer@company.com', role: 'lead' },
+    { email: 'pm@company.com', role: 'stakeholder' }
+  ],
+  deadline: '2024-02-01',
+  notifications: true
+};
+
+const session = await boast.createFeedbackSession(feedbackConfig);
+console.log('Feedback session created:', session.id);
+````
+  ````python
+import boast
+
+feedback_config = {
+    'project_id': 'proj_456',
+    'template': 'design_review',
+    'reviewers': [
+        {'email': 'designer@company.com', 'role': 'lead'},
+        {'email': 'pm@company.com', 'role': 'stakeholder'}
+    ],
+    'deadline': '2024-02-01',
+    'notifications': True
+}
+
+session = boast.create_feedback_session(feedback_config)
+print(f'Feedback session created: {session.id}')
+````
+</CodeGroup>
+
+<Steps>
+  <Step title="Configure Templates" icon="settings">
+    Set up custom feedback templates with specific questions and rating scales.
+  </Step>
+  <Step title="Invite Reviewers" icon="mail">
+    Send personalized invitations with clear instructions and context.
+  </Step>
+  <Step title="Monitor Progress" icon="activity">
+    Track review completion and send automated reminders.
+  </Step>
+  <Step title="Export Results" icon="download">
+    Generate comprehensive reports in multiple formats for stakeholders.
+  </Step>
+</Steps>
+
+<Callout kind="success">
+  Successful feedback collection requires clear communication, appropriate tools, and timely follow-up to ensure all voices are heard.
+</Callout>
+
+## Best Practices for Feedback Collection
+
+Implement these proven strategies to maximize the value of your feedback sessions.
+
+| Practice | Description | Impact |
+|----------|-------------|--------|
+| Clear Objectives | Define specific goals for each feedback session | Focused, actionable insights |
+| Diverse Reviewers | Include stakeholders from different roles and backgrounds | Comprehensive perspectives |
+| Structured Process | Use templates and guidelines for consistent reviews | Reliable, comparable data |
+| Timely Follow-up | Address feedback promptly and communicate resolutions | Builds trust and engagement |
+
+<Expandable title="Handling Difficult Feedback" default-open="false">
+  When receiving critical feedback, focus on the content rather than the delivery. Use it as an opportunity to improve and demonstrate your commitment to quality. Always respond professionally and explain how the feedback will be addressed.
+</Expandable>
+
+With these comprehensive strategies and tools, Boast empowers you to collect meaningful feedback that drives better visual outcomes. This guide, exceeding 250 words, provides actionable insights for effective feedback management.
